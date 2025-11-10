@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="#c0c0c0">
+
+    <!-- タイトル -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="電卓"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textStyle="bold"/>
+
+    <!-- 計算結果表示 -->
+    <TextView
+        android:id="@+id/displayText"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="end|center_vertical"
+        android:textSize="32sp"
+        android:background="#EEEEEE"
+        android:padding="8dp"
+        android:text=""/>
+
+    <!-- ボタングリッド -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true">
+
+        <!-- 1行目 -->
+        <Button android:id="@+id/btnClear" android:text="C" android:layout_columnSpan="2" style="@style/CalcButton.Operator"/>
+        <Button android:id="@+id/btnPercent" android:text="%" style="@style/CalcButton.Operator"/>
+        <Button android:id="@+id/btnDivide" android:text="÷" style="@style/CalcButton.Operator"/>
+
+        <!-- 2行目 -->
+        <Button android:id="@+id/btn7" android:text="7" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn8" android:text="8" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn9" android:text="9" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btnMultiply" android:text="×" style="@style/CalcButton.Operator"/>
+
+        <!-- 3行目 -->
+        <Button android:id="@+id/btn4" android:text="4" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn5" android:text="5" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn6" android:text="6" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btnMinus" android:text="-" style="@style/CalcButton.Operator"/>
+
+        <!-- 4行目 -->
+        <Button android:id="@+id/btn1" android:text="1" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn2" android:text="2" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn3" android:text="3" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btnPlus" android:text="+" style="@style/CalcButton.Operator"/>
+
+        <!-- 5行目 -->
+        <Button android:id="@+id/btn00" android:text="00" android:layout_columnSpan="2" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btn0" android:text="0" style="@style/CalcButton.Number"/>
+        <Button android:id="@+id/btnEquals" android:text="=" style="@style/CalcButton.Operator"/>
+    </GridLayout>
+
+    <!-- AdMob バナー -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-72167812316684"/>
+</LinearLayout>
